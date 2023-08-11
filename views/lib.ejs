@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="views/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-books</title>
+    <style>
+        .log{
+            border:2px solid black;
+            background-color: rgba(255, 0, 255,1);
+            margin:auto;
+            border-radius:5px;
+            display: flex;
+            align-content:center;
+            justify-content: center;
+            flex-direction:column;
+            width:25%;
+            padding:2%;
+        }
+        .log_outer{
+            display: flex;
+            align-content:center;
+            justify-content: center;
+            flex-direction:column;
+        }
+        .but{
+            display:flex;
+            align-content:center;
+            justify-content: center;
+        }
+        .des{
+            text-decoration:none;
+            background-color:rgb(174, 80, 150);
+            font-size:1.2rem;
+            border-radius: 999em;
+            font-weight:bold;
+            color:white;
+            padding:1%;
+            margin-left:1%;
+        }
+        .des_outer{
+            background-color: rgb(18, 231, 231,0.6);
+            padding:2%;
+            border-radius:5px;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+            background-position: absolute;
+            background-attachment:fixed;
+            background-image: url('https://imgs.search.brave.com/KfRyPcuGBsCvqJr-BkL5JDLFISBbcJjB0qN9dt_HVKQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/cGNjbGVhbi5pby93/cC1jb250ZW50L2dh/bGxlcnkvbGlicmFy/eS1oZC13YWxscGFw/ZXJzLzkxOTAwNC5q/cGc');
+        }
+    </style>
+
+</head>
+<body>
+    <div class="des_outer"><a href='/login' class="des">Logout</a><a href='/return' class="des">My Books</a><a href="/information" class="des">Info</a></div><br>
+    <div class="log_outer">
+        <% for(var i=0;i<result.length;i++) {%>
+            <div class="log">
+                <h1 style="font-weight:bold;font-size: 200%;"><%=result[i].name%></h1>
+                <h3 style="font-weight:bold;font-size: 130%;">Author: <%=result[i].author%></h3>
+                <form action="/borrow" method="post">
+                    <input type="hidden" name="bo_author" value='<%= result[i].author %>'>
+                    <input type="hidden" name='bo_name'value='<%= result[i].name %>'>
+                    <input type="hidden" name='bo_id' value='<%= result[i].bookid %>'>
+                    <button type="submit" class="but">Borrow</button>
+                </form>
+            </div>
+            <br>
+        <%}%>
+    </div>
+</body>
+</html> 

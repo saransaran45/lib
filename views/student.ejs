@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info about student</title>
+    <style>
+        .but{
+            display:flex;
+            align-content:center;
+            justify-content: center;
+        }
+        .des{
+            text-decoration:none;
+            background-color:rgb(174, 80, 150);
+            font-size:1.2rem;
+            border-radius: 999em;
+            font-weight:bold;
+            color:white;
+            padding:1%;
+            margin-left:1%;
+        }
+        .des_outer{
+            background-color: rgb(18, 231, 231,0.6);
+            padding:2%;
+            border-radius:5px;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+            background-attachment:fixed;
+            background-image: url('https://imgs.search.brave.com/KfRyPcuGBsCvqJr-BkL5JDLFISBbcJjB0qN9dt_HVKQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/cGNjbGVhbi5pby93/cC1jb250ZW50L2dh/bGxlcnkvbGlicmFy/eS1oZC13YWxscGFw/ZXJzLzkxOTAwNC5q/cGc');
+        }
+        .login_card{
+            background-color: rgba(255,0,255, 1);
+            border-radius:5%;
+            padding:5%;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-content: center;
+            border:2px solid red;
+        }
+        h2{
+            font-weight: 1000;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="display:flex;justify-content:center;align-content:center;margin-top:7%;border-color:red;">
+        <div class="login_card">
+            <div style="font-weight:bold;font-size: 130%;"><h2>Name:<%=result[0].name%></h2><br></div>
+            <div style="font-weight:bold;font-size: 130%;" ><h2>Rollno:<%=result[0].rollno%></h2><br></div>
+            <div style="font-weight:bold;font-size: 130%;" ><h2>Department:<%=result[0].department%></h2><br></div>
+            <div style="font-weight:bold;font-size: 130%;" ><h2>Semester:<%=result[0].semester%></h2><br></div>
+        </div>
+    </div>
+</body>
